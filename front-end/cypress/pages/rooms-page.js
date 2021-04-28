@@ -4,7 +4,6 @@ const CREATE_ROOM_BTN = 'h2 > .btn'
 const THREE_DOTS_BTN = 'img'
 const EDIT_BTN = '.menu > :nth-child(1)'
 const ROOMS_LIST = '.rooms'
-const FEATURE_LIST = '.feature'
 const DELETE_BTN = '.menu > :nth-child(2)'
 
 function viewRoomNew(content) {
