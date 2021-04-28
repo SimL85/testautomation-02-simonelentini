@@ -19,7 +19,7 @@ let randomMail = faker.internet.email()
 let randomPhone = faker.phone.phoneNumber()
 let randomValue = faker.datatype.number()
 
-describe('Testsuite with Page-Objet', () => {
+describe('Testsuite ', () => {
 
 
     beforeEach('login (TC1)', () => {
