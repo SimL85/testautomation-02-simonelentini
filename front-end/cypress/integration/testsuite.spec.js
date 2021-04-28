@@ -19,105 +19,109 @@ let randomMail = faker.internet.email()
 let randomPhone = faker.phone.phoneNumber()
 let randomValue = faker.datatype.number()
 
-describe('Testsuite with Page-Objet', ()=>{
+describe('Testsuite with Page-Objet', () => {
 
-   
-    beforeEach('login (TC1)',() => {
+
+    beforeEach('login (TC1)', () => {
         cy.visit('/')
         loginIndex.confirmHeader('Login')
-        loginIndex.loginUser('tester01','GteteqbQQgSr88SwNExUQv2ydb7xuf8c','Tester Hotel Overview')
+        loginIndex.loginUser('tester01', 'GteteqbQQgSr88SwNExUQv2ydb7xuf8c', 'Tester Hotel Overview')
+        cy.percySnapshot('Login')
+
     })
 
-    
-    afterEach('Logout (TC1)',() => {
+
+    afterEach('Logout (TC1)', () => {
         indexPage.logoutUser('Login')
+        cy.percySnapshot('Logout')
+
     })
 
-    it('Client registration (TC2)',() => {
+    it('Client registration (TC2)', () => {
         indexPage.viewClients('Clients')
         clientsPage.viewClientNew('New Client')
-        clientNewPage.createClient('Pina Colada','pinacolada@gmail.com','0701233234','Clients')
-        clientsPage.verifyLastClient('Pina Colada','pinacolada@gmail.com','0701233234')
+        clientNewPage.createClient('Pina Colada', 'pinacolada@gmail.com', '0701233234', 'Clients')
+        clientsPage.verifyLastClient('Pina Colada', 'pinacolada@gmail.com', '0701233234')
     })
 
-    it('Edit the last Client (TC3)',() => {
+    it('Edit the last Client (TC3)', () => {
         indexPage.viewClients('Clients')
         clientsPage.verifyEditLastClient('Client:')
-        clientEditPage.editClient('pinacolada@yahoo.se','Clients')
-        clientsPage.verifyLastClient('Pina Colada','pinacolada@yahoo.se','0701233234')
-       
+        clientEditPage.editClient('pinacolada@yahoo.se', 'Clients')
+        clientsPage.verifyLastClient('Pina Colada', 'pinacolada@yahoo.se', '0701233234')
+
     })
 
-    it('Delete the last Client (TC4)',() => {
+    it('Delete the last Client (TC4)', () => {
         indexPage.viewClients('Clients')
-        clientsPage.deleteLastClient('Clients')       
+        clientsPage.deleteLastClient('Clients')
     })
 
-    it('Create a bill (TC5)',() => {
+    it('Create a bill (TC5)', () => {
         indexPage.viewBills('Bills')
         billsPage.viewBillNew('New Bill')
-        billsNewPage.createBill('5000','Bills') 
+        billsNewPage.createBill('5000', 'Bills')
         billsPage.verifyLastBill('5000')
     })
 
-    it('Edit the last bill (TC6)',() => {
+    it('Edit the last bill (TC6)', () => {
         indexPage.viewBills('Bills')
         billsPage.verifyEditLastBill('Bill:')
-        billsEditPage.editLastBill('4500','Bills')
+        billsEditPage.editLastBill('4500', 'Bills')
         billsPage.verifyLastBill('4500')
     })
-    
-    it('Delete the last bill (TC7)',() => {
+
+    it('Delete the last bill (TC7)', () => {
         indexPage.viewBills('Bills')
         billsPage.deleteLastBill('Bills')
     })
 
-    it('Create a room (TC8)',() => {
+    it('Create a room (TC8)', () => {
         indexPage.viewRooms('Rooms')
         roomsPage.viewRoomNew('New Room')
-        roomsNewPage.createRoom('Twin','1101','11','4000',['Balcony', 'Ensuite', 'Penthouse'],'Rooms')
-        roomsPage.verifyLastRoom('twin','1101','11','4000','balcony')
-    })
-   
-    it('Edit the last room (TC9)',() => {
-        indexPage.viewRooms('Rooms')
-        roomsPage.verifyEditLastRoom('Room:')
-        roomEditPage.editRoom('1230','12','Rooms')
-        roomsPage.verifyLastRoom('twin','1230','12','4000','balcony')
-       
+        roomsNewPage.createRoom('Twin', '1101', '11', '4000', ['Balcony', 'Ensuite', 'Penthouse'], 'Rooms')
+        roomsPage.verifyLastRoom('twin', '1101', '11', '4000', 'balcony')
     })
 
-    it('Delete the last room (TC10)',() => {
+    it('Edit the last room (TC9)', () => {
+        indexPage.viewRooms('Rooms')
+        roomsPage.verifyEditLastRoom('Room:')
+        roomEditPage.editRoom('1230', '12', 'Rooms')
+        roomsPage.verifyLastRoom('twin', '1230', '12', '4000', 'balcony')
+
+    })
+
+    it('Delete the last room (TC10)', () => {
         indexPage.viewRooms('Rooms')
         roomsPage.deleteLastRoom('Rooms')
     })
-   
-    it('Client registration (TC2) with faker',() => {
+
+    it('Client registration (TC2) with faker', () => {
         indexPage.viewClients('Clients')
         clientsPage.viewClientNew('New Client')
-        clientNewPage.createClient(randomName,randomMail,randomPhone,'Clients')
-        clientsPage.verifyLastClient(randomName,randomMail,randomPhone,)
+        clientNewPage.createClient(randomName, randomMail, randomPhone, 'Clients')
+        clientsPage.verifyLastClient(randomName, randomMail, randomPhone,)
     })
 
-    it('Edit the last Client (TC3) with faker',() => {
+    it('Edit the last Client (TC3) with faker', () => {
         indexPage.viewClients('Clients')
         clientsPage.verifyEditLastClient('Client:')
-        clientEditPage.editClient(randomMail,'Clients')
-        clientsPage.verifyLastClient(randomName,randomMail,randomPhone)
-       
+        clientEditPage.editClient(randomMail, 'Clients')
+        clientsPage.verifyLastClient(randomName, randomMail, randomPhone)
+
     })
-    
-    it('Create a bill (TC5) with faker',() => {
+
+    it('Create a bill (TC5) with faker', () => {
         indexPage.viewBills('Bills')
         billsPage.viewBillNew('New Bill')
-        billsNewPage.createBill(randomValue,'Bills') 
+        billsNewPage.createBill(randomValue, 'Bills')
         billsPage.verifyLastBill(randomValue)
     })
 
-    it('Edit the last bill (TC6) with faker',() => {
+    it('Edit the last bill (TC6) with faker', () => {
         indexPage.viewBills('Bills')
         billsPage.verifyEditLastBill('Bill:')
-        billsEditPage.editLastBill(randomValue,'Bills')
+        billsEditPage.editLastBill(randomValue, 'Bills')
         billsPage.verifyLastBill(randomValue)
     })
 })

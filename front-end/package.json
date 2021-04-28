@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --spec cypress/integration/test-suite-with-po.spec.js",
+    "cypress:run": "cypress run --spec cypress/integration/testsuite.spec.js",
     "test:vrt": "percy exec cypress run --spec cypress/integration/testsuite-percy.spec.js",
-    "cypress:run rep": "cypress run --reporter mochawesome",
+    "cypress:rep": "cypress run --reporter mochawesome ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,11 +17,12 @@
     "@percy/cli": "^1.0.0-beta.48",
     "@percy/cypress": "^3.1.0",
     "cypress": "^7.1.0",
-    "faker": "^5.5.3"
+    "faker": "^5.5.3",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
   },
   "dependencies": {
-    "mocha": "^5.2.0",
-    "mochawesome": "^6.2.2",
-    "mochawesome-merge": "^4.2.0"
+    "mocha": "^5.2.0"
   }
 }

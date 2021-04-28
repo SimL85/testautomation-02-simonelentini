@@ -2,9 +2,9 @@
 
 const NUMBER_FIELD = ':nth-child(4) > input'
 const FLOOR_FIELD = ':nth-child(5) > input'
-const SAVE_BTN ='.blue'
+const SAVE_BTN = '.blue'
 
-function editRoom(number,floor,content){
+function editRoom(number, floor, content) {
     cy.get(NUMBER_FIELD).clear().type(number)
     cy.get(FLOOR_FIELD).clear().type(floor)
     cy.get(SAVE_BTN).click()
@@ -12,7 +12,7 @@ function editRoom(number,floor,content){
 }
 
 
-exports.default ={
+exports.default = {
     editRoom,
-   
+
 }

@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2021-04-27T09:27:33.507Z",
-    "end": "2021-04-27T09:27:42.520Z",
-    "duration": 9013,
+    "start": "2021-04-28T17:33:11.162Z",
+    "end": "2021-04-28T17:33:21.540Z",
+    "duration": 10378,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3afb196d-7456-496c-a612-58fd1064c7eb",
+      "uuid": "53386136-8e3c-416a-9f03-16067d8520b2",
       "title": "",
       "fullFile": "cypress/integration/testsuite-percy.spec.js",
       "file": "cypress/integration/testsuite-percy.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ac41b578-4e5a-40d4-aeab-0dfae1c10b03",
+          "uuid": "4ecb41f1-e372-4b5e-89ab-81ddc63e7e27",
           "title": "Login and Logout a user",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Login (TC1)",
               "fullTitle": "Login and Logout a user Login (TC1)",
               "timedOut": null,
-              "duration": 8818,
+              "duration": 10355,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('http://localhost:3000');\ncy.title().should('eq', 'Testers Hotel');\ncy.get('h2').should('contain', 'Login');\ncy.percySnapshot('index-page');\ncy.get(':nth-child(1) > input').type('tester01');\ncy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c');\ncy.get('.btn').click();\ncy.get('.username').should('contain', 'Welcome tester01');\ncy.wait(3000);\ncy.percySnapshot('EE-page');\ncy.get('.user > .btn').click();\ncy.get('h2').should('contain', 'Login');\ncy.percySnapshot('dashbord-page');",
               "err": {},
-              "uuid": "ab9ad68c-be92-41d1-ab22-e8a3426e7686",
-              "parentUUID": "ac41b578-4e5a-40d4-aeab-0dfae1c10b03",
+              "uuid": "944239b1-f226-4421-b392-405f92dd1f95",
+              "parentUUID": "4ecb41f1-e372-4b5e-89ab-81ddc63e7e27",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ab9ad68c-be92-41d1-ab22-e8a3426e7686"
+            "944239b1-f226-4421-b392-405f92dd1f95"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8818,
+          "duration": 10355,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

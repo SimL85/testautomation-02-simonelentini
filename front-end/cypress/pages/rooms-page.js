@@ -7,29 +7,29 @@ const ROOMS_LIST = '.rooms'
 const FEATURE_LIST = '.feature'
 const DELETE_BTN = '.menu > :nth-child(2)'
 
-function viewRoomNew(content){
+function viewRoomNew(content) {
     cy.get(CREATE_ROOM_BTN).click()
     cy.contains(content)
 }
 
-function verifyLastRoom(category,number,floor,price,features){
+function verifyLastRoom(category, number, floor, price, features) {
     cy.get(ROOMS_LIST).last()
-    cy.should('contain',floor)
-    .and('contain',number)
-    .and('contain',category)
-    .and('contain',price)
-    .and('contain',features)
+    cy.should('contain', floor)
+        .and('contain', number)
+        .and('contain', category)
+        .and('contain', price)
+        .and('contain', features)
 
 }
 
 
-function verifyEditLastRoom(content){
+function verifyEditLastRoom(content) {
     cy.get(THREE_DOTS_BTN).last().click()
     cy.get(EDIT_BTN).click()
     cy.contains(content)
 }
 
-function deleteLastRoom(content){
+function deleteLastRoom(content) {
     cy.get(THREE_DOTS_BTN).last().click()
     cy.get(DELETE_BTN).click()
     cy.contains(content)

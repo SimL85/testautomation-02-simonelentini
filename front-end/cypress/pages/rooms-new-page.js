@@ -8,7 +8,7 @@ const PRICE_FIELD = ':nth-child(5) > input'
 const FEATURES_FIELD = ':nth-child(6) > select'
 const SAVE_BTN = '.blue'
 
-function createRoom(category,number,floor,price,features,content){
+function createRoom(category, number, floor, price, features, content) {
     cy.get(CATEGORY_FIELD).select(category)
     cy.get(NUMBER_FIELD).type(number)
     cy.get(FLOOR_FIELD).type(floor)
@@ -19,6 +19,6 @@ function createRoom(category,number,floor,price,features,content){
     cy.contains(content)
 }
 
-exports.default ={
+exports.default = {
     createRoom
 }
