@@ -13,7 +13,7 @@ function viewBillNew(content){
 
 function verifyLastBill(value){
     cy.get(BILLS_LIST).last()
-    cy.should('contain',value)
+    cy.contains(value)
 }
 
 function verifyEditLastBill(content){

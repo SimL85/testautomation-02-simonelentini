@@ -17,6 +17,7 @@ var faker = require('faker')
 let randomName = faker.name.findName()
 let randomMail = faker.internet.email()
 let randomPhone = faker.phone.phoneNumber()
+let randomValue = faker.datatype.number()
 
 describe('Testsuite with Page-Objet', ()=>{
 
@@ -27,11 +28,11 @@ describe('Testsuite with Page-Objet', ()=>{
         loginIndex.loginUser('tester01','GteteqbQQgSr88SwNExUQv2ydb7xuf8c','Tester Hotel Overview')
     })
 
-    /*
+    
     afterEach('Logout (TC1)',() => {
         indexPage.logoutUser('Login')
     })
-*/
+
     it('Client registration (TC2)',() => {
         indexPage.viewClients('Clients')
         clientsPage.viewClientNew('New Client')
@@ -91,14 +92,14 @@ describe('Testsuite with Page-Objet', ()=>{
         roomsPage.deleteLastRoom('Rooms')
     })
    
-    it.only('Client registration (TC2) with faker',() => {
+    it('Client registration (TC2) with faker',() => {
         indexPage.viewClients('Clients')
         clientsPage.viewClientNew('New Client')
         clientNewPage.createClient(randomName,randomMail,randomPhone,'Clients')
         clientsPage.verifyLastClient(randomName,randomMail,randomPhone,)
     })
 
-    it.only('Edit the last Client (TC3) with faker',() => {
+    it('Edit the last Client (TC3) with faker',() => {
         indexPage.viewClients('Clients')
         clientsPage.verifyEditLastClient('Client:')
         clientEditPage.editClient(randomMail,'Clients')
@@ -109,14 +110,14 @@ describe('Testsuite with Page-Objet', ()=>{
     it('Create a bill (TC5) with faker',() => {
         indexPage.viewBills('Bills')
         billsPage.viewBillNew('New Bill')
-        billsNewPage.createBill('5000','Bills') 
-        billsPage.verifyLastBill('5000')
+        billsNewPage.createBill(randomValue,'Bills') 
+        billsPage.verifyLastBill(randomValue)
     })
 
     it('Edit the last bill (TC6) with faker',() => {
         indexPage.viewBills('Bills')
         billsPage.verifyEditLastBill('Bill:')
-        billsEditPage.editLastBill('4500','Bills')
-        billsPage.verifyLastBill('4500')
+        billsEditPage.editLastBill(randomValue,'Bills')
+        billsPage.verifyLastBill(randomValue)
     })
 })
