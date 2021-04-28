@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-28T12:25:51.754Z",
+    "end": "2021-04-28T12:25:56.639Z",
+    "duration": 4885,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8d0c0a6a-30f4-4e63-a88a-71c835dbccfa",
+      "title": "",
+      "fullFile": "cypress/integration/2-create-edit-delete-a-client.js",
+      "file": "cypress/integration/2-create-edit-delete-a-client.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4d9dda95-eabf-470b-8064-5fbbf1b81f24",
+          "title": "Registration, Editing and Deleting a client",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Registration, Editing and Deleting a client Login",
+              "timedOut": null,
+              "duration": 1960,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000');\ncy.title().should('eq', 'Testers Hotel');\ncy.get('h2').should('contain', 'Login');\ncy.get(':nth-child(1) > input').type('tester01');\ncy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c');\ncy.get('.btn').click();\ncy.get('.username').should('contain', 'Welcome tester01');",
+              "err": {},
+              "uuid": "91d8a922-9f08-4e7d-9d75-eeca1bba7480",
+              "parentUUID": "4d9dda95-eabf-470b-8064-5fbbf1b81f24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Client Registration (TC2)",
+              "fullTitle": "Registration, Editing and Deleting a client Client Registration (TC2)",
+              "timedOut": null,
+              "duration": 1569,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.blocks > :nth-child(2) > .btn').click();\ncy.title().should('eq', 'Testers Hotel');\ncy.get('h2').should('contain', 'Clients');\ncy.get('h2 > .btn').click();\ncy.get(':nth-child(1) > input').type('Pina Colada');\ncy.get(':nth-child(2) > input').type('pinacolada@gmail.com');\ncy.get(':nth-child(3) > input').type('070 12 33 234');\ncy.get('.blue').click();\ncy.get('h2').should('contain', 'Clients');",
+              "err": {},
+              "uuid": "14eae0b0-3fc5-4b37-bd5b-88a5e54e1031",
+              "parentUUID": "4d9dda95-eabf-470b-8064-5fbbf1b81f24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit a client (TC3)",
+              "fullTitle": "Registration, Editing and Deleting a client Edit a client (TC3)",
+              "timedOut": null,
+              "duration": 883,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h2').should('contain', 'Clients');\ncy.get('img').last().click();\ncy.get('.menu > :nth-child(1)').click();\ncy.get(':nth-child(4) > input').clear();\ncy.get(':nth-child(4) > input').type('pinacolada@yahoo.se');\ncy.get('.blue').click();\ncy.get('h2').should('contain', 'Clients');",
+              "err": {},
+              "uuid": "1ba2c7e3-e4f5-4fa9-a0ec-3a20c35722ac",
+              "parentUUID": "4d9dda95-eabf-470b-8064-5fbbf1b81f24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deleting a Client (TC4)",
+              "fullTitle": "Registration, Editing and Deleting a client Deleting a Client (TC4)",
+              "timedOut": null,
+              "duration": 258,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h2').should('contain', 'Clients');\ncy.get('img').last().click();\ncy.get('.menu > :nth-child(2)').click();\ncy.get('h2').should('contain', 'Clients');",
+              "err": {},
+              "uuid": "e02674e1-7812-4de2-a38c-1217e130534e",
+              "parentUUID": "4d9dda95-eabf-470b-8064-5fbbf1b81f24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logout",
+              "fullTitle": "Registration, Editing and Deleting a client Logout",
+              "timedOut": null,
+              "duration": 127,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.user > .btn').click();\ncy.get('h2').should('contain', 'Login');",
+              "err": {},
+              "uuid": "853ac381-c457-4868-b218-b85c5ed4ac13",
+              "parentUUID": "4d9dda95-eabf-470b-8064-5fbbf1b81f24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "91d8a922-9f08-4e7d-9d75-eeca1bba7480",
+            "14eae0b0-3fc5-4b37-bd5b-88a5e54e1031",
+            "1ba2c7e3-e4f5-4fa9-a0ec-3a20c35722ac",
+            "e02674e1-7812-4de2-a38c-1217e130534e",
+            "853ac381-c457-4868-b218-b85c5ed4ac13"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4797,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/m-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "yyyy/mm/dd_HHMMss"
+      },
+      "version": "5.2.0"
+    }
+  }
+}

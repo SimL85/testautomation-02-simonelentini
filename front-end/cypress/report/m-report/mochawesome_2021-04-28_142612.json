@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-28T12:26:07.739Z",
+    "end": "2021-04-28T12:26:12.252Z",
+    "duration": 4513,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "310d419a-e2af-49da-8a6a-55678c88b1c6",
+      "title": "",
+      "fullFile": "cypress/integration/4-create-edit-delete-a-room.js",
+      "file": "cypress/integration/4-create-edit-delete-a-room.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "34fe3e0a-7a61-4b80-b685-27d393d59a70",
+          "title": "Create, Editing and Deleting a Room",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Create, Editing and Deleting a Room Login",
+              "timedOut": null,
+              "duration": 1891,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000');\ncy.title().should('eq', 'Testers Hotel');\ncy.get('h2').should('contain', 'Login');\ncy.get(':nth-child(1) > input').type('tester01');\ncy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c');\ncy.get('.btn').click();\ncy.get('.username').should('contain', 'Welcome tester01');",
+              "err": {},
+              "uuid": "d933450a-5634-488b-83ef-1e1affb17750",
+              "parentUUID": "34fe3e0a-7a61-4b80-b685-27d393d59a70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a Room (TC8)",
+              "fullTitle": "Create, Editing and Deleting a Room Create a Room (TC8)",
+              "timedOut": null,
+              "duration": 1576,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.blocks > :nth-child(1) > .btn').click();\ncy.get('h2').should('contain', 'Rooms');\ncy.get('h2 > .btn').click();\ncy.get('h2 > div').should('contain', 'New Room');\ncy.get(':nth-child(1) > select').select('Twin');\ncy.get(':nth-child(2) > input').type(1101);\ncy.get(':nth-child(3) > input').type(11);\ncy.get('.checkbox').click();\ncy.get(':nth-child(5) > input').type(4000);\ncy.get(':nth-child(6) > select').select(['Balcony', 'Ensuite', 'Penthouse']);\ncy.get('.blue').click();\ncy.get('h2').should('contain', 'Rooms');",
+              "err": {},
+              "uuid": "3d696f24-2f49-4ddb-921a-ec7bf2225eea",
+              "parentUUID": "34fe3e0a-7a61-4b80-b685-27d393d59a70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editing a Room (TC9)",
+              "fullTitle": "Create, Editing and Deleting a Room Editing a Room (TC9)",
+              "timedOut": null,
+              "duration": 615,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h2').should('contain', 'Rooms');\ncy.get('img').last().click();\ncy.get('.menu > :nth-child(1)').click();\ncy.get(':nth-child(3) > select').select('Double');\ncy.get('.checkbox').click();\ncy.get('.blue').click();\ncy.get('h2').should('contain', 'Rooms');",
+              "err": {},
+              "uuid": "89a90089-3d22-481c-843b-9779c29b8b4a",
+              "parentUUID": "34fe3e0a-7a61-4b80-b685-27d393d59a70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deleting a Room (TC10)",
+              "fullTitle": "Create, Editing and Deleting a Room Deleting a Room (TC10)",
+              "timedOut": null,
+              "duration": 231,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h2').should('contain', 'Rooms');\ncy.get('img').last().click();\ncy.get('.menu > :nth-child(2)').click();\ncy.get('h2').should('contain', 'Rooms');",
+              "err": {},
+              "uuid": "f68898e5-e987-46e1-8e98-3e21ab550dd6",
+              "parentUUID": "34fe3e0a-7a61-4b80-b685-27d393d59a70",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logout",
+              "fullTitle": "Create, Editing and Deleting a Room Logout",
+              "timedOut": null,
+              "duration": 117,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.user > .btn').click();\ncy.get('h2').should('contain', 'Login');",
+              "err": {},
+              "uuid": "480cd907-bd72-48cb-92fc-a631dc1276fe",
+              "parentUUID": "34fe3e0a-7a61-4b80-b685-27d393d59a70",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d933450a-5634-488b-83ef-1e1affb17750",
+            "3d696f24-2f49-4ddb-921a-ec7bf2225eea",
+            "89a90089-3d22-481c-843b-9779c29b8b4a",
+            "f68898e5-e987-46e1-8e98-3e21ab550dd6",
+            "480cd907-bd72-48cb-92fc-a631dc1276fe"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4430,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/m-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "yyyy/mm/dd_HHMMss"
+      },
+      "version": "5.2.0"
+    }
+  }
+}

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run --spec cypress/integration/1login-logout.js",
+    "cypress:run": "cypress run --spec cypress/integration/test-suite-with-po.spec.js",
     "test:vrt": "percy exec cypress run --spec cypress/integration/testsuite-percy.spec.js",
     "cypress:run rep": "cypress run --reporter mochawesome",
    
