@@ -15,7 +15,7 @@ import * as roomEditPage from '../pages/rooms-edit-page'
 var faker = require('faker')
 
 let randomName = faker.name.findName()
-let randomMail = faker.internet.mail()
+let randomMail = faker.internet.email()
 let randomPhone = faker.phone.phoneNumber()
 
 describe('Testsuite with Page-Objet', ()=>{
@@ -94,8 +94,29 @@ describe('Testsuite with Page-Objet', ()=>{
     it.only('Client registration (TC2) with faker',() => {
         indexPage.viewClients('Clients')
         clientsPage.viewClientNew('New Client')
-        clientNewPage.createClient('Pina Colada','pinacolada@gmail.com','0701233234','Clients')
-        clientsPage.verifyLastClient('Pina Colada','pinacolada@gmail.com','0701233234')
+        clientNewPage.createClient(randomName,randomMail,randomPhone,'Clients')
+        clientsPage.verifyLastClient(randomName,randomMail,randomPhone,)
     })
 
+    it.only('Edit the last Client (TC3) with faker',() => {
+        indexPage.viewClients('Clients')
+        clientsPage.verifyEditLastClient('Client:')
+        clientEditPage.editClient(randomMail,'Clients')
+        clientsPage.verifyLastClient(randomName,randomMail,randomPhone)
+       
+    })
+    
+    it('Create a bill (TC5) with faker',() => {
+        indexPage.viewBills('Bills')
+        billsPage.viewBillNew('New Bill')
+        billsNewPage.createBill('5000','Bills') 
+        billsPage.verifyLastBill('5000')
+    })
+
+    it('Edit the last bill (TC6) with faker',() => {
+        indexPage.viewBills('Bills')
+        billsPage.verifyEditLastBill('Bill:')
+        billsEditPage.editLastBill('4500','Bills')
+        billsPage.verifyLastBill('4500')
+    })
 })
