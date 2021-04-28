@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-28T12:13:36.367Z",
+    "end": "2021-04-28T12:13:39.912Z",
+    "duration": 3545,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a863c9f5-e72f-4d4c-8542-b0ae129f192b",
+      "title": "",
+      "fullFile": "cypress/integration/3-create-edit-delete-a-bill.js",
+      "file": "cypress/integration/3-create-edit-delete-a-bill.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb2df02f-b6a8-493e-a5ce-33349e18aa91",
+          "title": "Create, Editing and Deleting a Bill",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Create, Editing and Deleting a Bill Login",
+              "timedOut": null,
+              "duration": 1699,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://localhost:3000');\ncy.title().should('eq', 'Testers Hotel');\ncy.get('h2').should('contain', 'Login');\ncy.get(':nth-child(1) > input').type('tester01');\ncy.get(':nth-child(2) > input').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c');\ncy.get('.btn').click();\ncy.get('.username').should('contain', 'Welcome tester01');",
+              "err": {},
+              "uuid": "cc0c47ee-cdd2-47cf-b452-8150411b130f",
+              "parentUUID": "cb2df02f-b6a8-493e-a5ce-33349e18aa91",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Create a Bill (TC5)",
+              "fullTitle": "Create, Editing and Deleting a Bill Create a Bill (TC5)",
+              "timedOut": null,
+              "duration": 579,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.blocks > :nth-child(3) > .btn').click();\ncy.get('h2').should('contain', 'Bills');\ncy.get('h2 > .btn').click();\ncy.get('h2 > div').should('contain', 'New Bill');\ncy.get('input').type(5000);\ncy.get('.checkbox').click();\ncy.get('.blue').click();\ncy.get('h2').should('contain', 'Bills');",
+              "err": {},
+              "uuid": "015e1afe-5a2d-439f-9b24-c4fe06406581",
+              "parentUUID": "cb2df02f-b6a8-493e-a5ce-33349e18aa91",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Editing a Bill (TC6)",
+              "fullTitle": "Create, Editing and Deleting a Bill Editing a Bill (TC6)",
+              "timedOut": null,
+              "duration": 925,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('h2').should('contain', 'Bills');\ncy.get('img').last().click();\ncy.get('.menu > :nth-child(1)').click();\ncy.get(':nth-child(3) > input').clear();\ncy.get(':nth-child(3) > input').type(4500);\ncy.get('.checkbox').click();\ncy.get('.blue').click();\ncy.get('h2').should('contain', 'Bills');",
+              "err": {},
+              "uuid": "fcaa0479-7620-4209-b252-f4d8fd5ef53c",
+              "parentUUID": "cb2df02f-b6a8-493e-a5ce-33349e18aa91",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deleting a Bill (TC7)",
+              "fullTitle": "Create, Editing and Deleting a Bill Deleting a Bill (TC7)",
+              "timedOut": null,
+              "duration": 194,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('img').last().click();\ncy.get('.menu > :nth-child(2)').click();\ncy.get('h2').should('contain', 'Bills');",
+              "err": {},
+              "uuid": "d84751b5-3354-4179-bd43-d6ec146c3f2e",
+              "parentUUID": "cb2df02f-b6a8-493e-a5ce-33349e18aa91",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Logout",
+              "fullTitle": "Create, Editing and Deleting a Bill Logout",
+              "timedOut": null,
+              "duration": 102,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.user > .btn').click();\ncy.get('h2').should('contain', 'Login');",
+              "err": {},
+              "uuid": "164a4bef-a0d0-44f2-896b-12dab0b7319b",
+              "parentUUID": "cb2df02f-b6a8-493e-a5ce-33349e18aa91",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cc0c47ee-cdd2-47cf-b452-8150411b130f",
+            "015e1afe-5a2d-439f-9b24-c4fe06406581",
+            "fcaa0479-7620-4209-b252-f4d8fd5ef53c",
+            "d84751b5-3354-4179-bd43-d6ec146c3f2e",
+            "164a4bef-a0d0-44f2-896b-12dab0b7319b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3499,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/report/m-report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "yyyy/mm/dd_HHMMss"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
