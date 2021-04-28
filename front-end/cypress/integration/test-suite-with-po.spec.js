@@ -12,6 +12,12 @@ import * as roomsPage from '../pages/rooms-page'
 import * as roomsNewPage from '../pages/rooms-new-page'
 import * as roomEditPage from '../pages/rooms-edit-page'
 
+var faker = require('faker')
+
+let randomName = faker.name.findName()
+let randomMail = faker.internet.mail()
+let randomPhone = faker.phone.phoneNumber()
+
 describe('Testsuite with Page-Objet', ()=>{
 
    
@@ -21,11 +27,11 @@ describe('Testsuite with Page-Objet', ()=>{
         loginIndex.loginUser('tester01','GteteqbQQgSr88SwNExUQv2ydb7xuf8c','Tester Hotel Overview')
     })
 
-    
+    /*
     afterEach('Logout (TC1)',() => {
         indexPage.logoutUser('Login')
     })
-
+*/
     it('Client registration (TC2)',() => {
         indexPage.viewClients('Clients')
         clientsPage.viewClientNew('New Client')
@@ -84,4 +90,12 @@ describe('Testsuite with Page-Objet', ()=>{
         indexPage.viewRooms('Rooms')
         roomsPage.deleteLastRoom('Rooms')
     })
+   
+    it.only('Client registration (TC2) with faker',() => {
+        indexPage.viewClients('Clients')
+        clientsPage.viewClientNew('New Client')
+        clientNewPage.createClient('Pina Colada','pinacolada@gmail.com','0701233234','Clients')
+        clientsPage.verifyLastClient('Pina Colada','pinacolada@gmail.com','0701233234')
+    })
+
 })

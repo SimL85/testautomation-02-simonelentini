@@ -8,7 +8,6 @@
     "cypress:run": "cypress run --spec cypress/integration/test-suite-with-po.spec.js",
     "test:vrt": "percy exec cypress run --spec cypress/integration/testsuite-percy.spec.js",
     "cypress:run rep": "cypress run --reporter mochawesome",
-   
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,7 +16,8 @@
   "devDependencies": {
     "@percy/cli": "^1.0.0-beta.48",
     "@percy/cypress": "^3.1.0",
-    "cypress": "^7.1.0"
+    "cypress": "^7.1.0",
+    "faker": "^5.5.3"
   },
   "dependencies": {
     "mocha": "^5.2.0",
